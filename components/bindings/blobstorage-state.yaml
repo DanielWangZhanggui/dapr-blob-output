@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: blobstoragestore
+  namespace: default
+spec:
+  type: state.azure.blobstorage
+  version: v1
+  metadata:
+    - name: accountName
+      value: danielstorage
+    - name: accountKey
+      value: 9FPTpZnKz3b8//2nXbKo42yqbhsPvWclyBMaktITZQXCKR0Je+dc1el1c2tf/DuLAjcubcLHRos3QWndyUR+cg==
+    - name: containerName
+      value: dapr
+    - name: azureEnvironment
+      value: AZURECHINACLOUD
