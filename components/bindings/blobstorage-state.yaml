@@ -10,7 +10,7 @@ spec:
     - name: accountName
       value: danielstorage
     - name: accountKey
-      value: 9FPTpZnKz3b8//2nXbKo42yqbhsPvWclyBMaktITZQXCKR0Je+dc1el1c2tf/DuLAjcubcLHRos3QWndyUR+cg==
+      value: cBoz5VTmPBqpwPpBHkGtheI2EmZeIbxOPnwXew3oDe1N3/B20KWF/vi2GgAYwE6fw6yS3IlKnt2cEMaeY2HHO+w1==
     - name: containerName
       value: dapr
     - name: azureEnvironment
