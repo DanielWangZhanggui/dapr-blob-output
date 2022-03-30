@@ -1,0 +1,41 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: output
+  labels:
+    app: output
+spec:
+  selector:
+    app: output
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: output
+  labels:
+    app: output
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: output
+  template:
+    metadata:
+      labels:
+        app: output
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "output"
+        dapr.io/app-port: "8080"
+    spec:
+      containers:
+      - name: output
+        image: testdanielaaa.azurecr.io/daniel/dapr-blob-output:v2
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
